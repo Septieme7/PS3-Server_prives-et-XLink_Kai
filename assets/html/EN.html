@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0a0e1a">
+  <title>PS3 Guide — Private Servers &amp; XLink Kai</title>
+  <meta name="description" content="Complete OFW/CFW guide: XLink Kai, private DNS servers, PC emulators, troubleshooting and PS3 revival games list.">
+  <meta name="author" content="PS3 Revival Community">
+
+  <!-- PWA -->
+  <link rel="manifest" href="../../site.manifest">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="PS3 Guide">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="PS3 Guide — Private Servers &amp; XLink Kai">
+  <meta property="og:description" content="Complete OFW/CFW guide to play online on PS3 again.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="fr_FR">
+
+  <!-- Hreflang -->
+  <link rel="alternate" hreflang="fr" href="../../index.html">
+  <link rel="alternate" hreflang="en" href="./en.html">
+
+  <!-- Favicons (chemins relatifs à /assets/html/) -->
+  <link rel="icon" type="image/x-icon" href="../icon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="../icon/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../icon/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../icon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="../icon/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="../icon/android-chrome-512x512.png">
+
+  <link rel="stylesheet" href="../style/style.css">
+</head>
+<body id="top">
+
+  <!-- 🎾 Bouncing decorative image -->
+  <img
+    src="../image/border-pattern.png"
+    alt=""
+    aria-hidden="true"
+    id="bouncingImage"
+    class="bouncing-image"
+  >
+
+  <!-- Background decor -->
+  <div class="bg-layer" aria-hidden="true">
+    <div class="bg-grid"></div>
+    <div class="bg-orb bg-orb--1"></div>
+    <div class="bg-orb bg-orb--2"></div>
+    <div class="bg-orb bg-orb--3"></div>
+  </div>
+
+  <!-- Progress bar -->
+  <div class="scroll-progress" aria-hidden="true"><span id="scrollProgressBar"></span></div>
+
+  <!-- Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <a href="#top" class="brand" aria-label="Back to top">
+        <span class="brand-badge">PS3</span>
+        <span class="brand-text">Revival<span class="brand-dot">.</span>Guide</span>
+      </a>
+
+      <div class="header-actions">
+        <span class="status-pill" title="Status indicator">
+          <span class="status-dot"></span> Guide active
+        </span>
+
+        <!-- Language switcher (links) -->
+        <div class="lang-switch" role="group" aria-label="Language / Langue">
+          <a href="../../index.html" class="lang-btn" aria-label="Français" hreflang="fr">FR</a>
+          <span class="lang-btn is-active" aria-current="page" aria-label="English">EN</span>
+        </div>
+
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" aria-pressed="false">
+          <span class="theme-toggle__track">
+            <span class="theme-toggle__thumb">
+              <svg class="ico-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+              <svg class="ico-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+            </span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar" aria-label="Main navigation">
+    <nav class="sidebar-inner">
+      <p class="sidebar-label">Contents</p>
+      <ul class="nav-list">
+        <li><a href="#intro" class="nav-link"><span class="nav-bullet"></span>Introduction</a></li>
+        <li><a href="#types" class="nav-link"><span class="nav-bullet"></span>Multiplayer types</a></li>
+        <li><a href="#xlink-kai" class="nav-link"><span class="nav-bullet"></span>XLink Kai</a></li>
+        <li><a href="#dns-prives" class="nav-link"><span class="nav-bullet"></span>Private DNS servers</a></li>
+        <li><a href="#emulateurs" class="nav-link"><span class="nav-bullet"></span>PC emulators</a></li>
+        <li><a href="#liste-jeux" class="nav-link"><span class="nav-bullet"></span>Games list</a></li>
+        <li><a href="#lan-local" class="nav-link"><span class="nav-bullet"></span>Local PS3 LAN</a></li>
+        <li><a href="#depannage" class="nav-link"><span class="nav-bullet"></span>Troubleshooting</a></li>
+        <li><a href="#avertissements" class="nav-link"><span class="nav-bullet"></span>Warnings</a></li>
+        <li><a href="#ressources" class="nav-link"><span class="nav-bullet"></span>Resources</a></li>
+      </ul>
+      <div class="sidebar-foot">
+        <span class="sidebar-foot__label">Tip</span>
+        <p>Click any <code>DNS</code> address to copy it.</p>
+      </div>
+    </nav>
+  </aside>
+  <div class="sidebar-backdrop" id="sidebarBackdrop" hidden></div>
+
+  <!-- Content -->
+  <main class="content" id="content">
+
+    <!-- INTRO -->
+    <section id="intro" class="section">
+      <header class="section-head">
+        <span class="section-tag">01</span>
+        <h1 class="section-title">Complete Guide: Playing Online on PS3 OFW/CFW via XLink Kai and Private Servers</h1>
+      </header>
+      <div class="section-body">
+        <p>This guide details the methods to play online on PS3 when the official servers are shut down. It covers <strong>XLink Kai</strong> (LAN tunneling), <strong>private servers via DNS</strong>, and <strong>server emulators on PC</strong>.</p>
+
+        <div class="callout callout--info">
+          <div class="callout__icon">ℹ️</div>
+          <div class="callout__content">
+            <p><strong>Important</strong>: This guide applies to PS3 <strong>OFW (official firmware)</strong> and <strong>CFW/HFW</strong>.<br>
+            CFW is <strong>not required</strong> for:</p>
+            <ul>
+              <li><strong>XLink Kai</strong> (if the game supports native LAN/System Link)</li>
+              <li><strong>DNS redirection</strong> to most private servers</li>
+            </ul>
+            <p>CFW/HFW becomes necessary for:</p>
+            <ul>
+              <li>Custom <strong>EBOOT patches</strong></li>
+              <li>Tools like <strong>ezDNS</strong>, <strong>webMAN</strong>, etc.</li>
+              <li>Some <strong>PC server emulators</strong> (EA Plasma/Arcadia, etc.)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="callout callout--warn">
+          <div class="callout__icon">⚠️</div>
+          <div class="callout__content">
+            <p><strong>Important reminder</strong>: All PS3 consoles must have <strong>exactly the same version</strong> of the game (update, DLC) to play together.</p>
+          </div>
+        </div>
+
+        <div class="callout callout--accent">
+          <div class="callout__icon">🔄</div>
+          <div class="callout__content">
+            <p><strong>Update</strong>: This guide includes the list of custom/revival servers, their DNS and associated games. For custom DNS servers, use the listed IP as the <strong>primary DNS</strong>, then <code>1.1.1.1</code> or <code>8.8.4.4</code> as the <strong>secondary DNS</strong>, unless stated otherwise.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TYPES -->
+    <section id="types" class="section">
+      <header class="section-head">
+        <span class="section-tag">02</span>
+        <h2 class="section-title">Reminder: Multiplayer Types and Connection Methods</h2>
+      </header>
+      <div class="section-body">
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Icon</th><th>Type</th><th>Description</th></tr></thead>
+            <tbody>
+              <tr><td>🌐</td><td><strong>Native LAN</strong></td><td>Local network between multiple consoles, no Internet needed. "LAN" or "Local Network" option in the game.</td></tr>
+              <tr><td>🔗</td><td><strong>System Link</strong></td><td>PS3 equivalent of LAN. Local network between consoles.</td></tr>
+              <tr><td>🖥️</td><td><strong>Local / Split-screen</strong></td><td>Multiplayer on the same console. No network.</td></tr>
+              <tr><td>☁️</td><td><strong>Online only</strong></td><td>Requires Internet and PSN. No LAN.</td></tr>
+              <tr><td>🔧</td><td><strong>Patch / CFW required</strong></td><td>Unofficial LAN mode or requiring a patch/CFW.</td></tr>
+              <tr><td>❓</td><td><strong>Unconfirmed</strong></td><td>Conflicting information. To be verified.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="sub-title">Connection methods</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Method</th><th>Principle</th><th>Requirements</th></tr></thead>
+            <tbody>
+              <tr><td><strong>XLink Kai</strong></td><td>LAN tunnel over the Internet. Emulates a local network between distant consoles.</td><td>PS3 <strong>OFW or CFW</strong>, PC/Mac/Raspberry Pi, Ethernet cables, XLink Kai account.</td></tr>
+              <tr><td><strong>Private DNS</strong></td><td>Redirects DNS requests to a replacement server.</td><td>PS3 <strong>OFW or CFW</strong>, change DNS in network settings.</td></tr>
+              <tr><td><strong>Server emulator</strong></td><td>PC server emulating backend services (EA Plasma, etc.).</td><td>PC running, DNS/redirection config, sometimes EBOOT patch (<strong>CFW/HFW recommended</strong>).</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- XLINK KAI -->
+    <section id="xlink-kai" class="section">
+      <header class="section-head">
+        <span class="section-tag">03</span>
+        <h2 class="section-title">XLink Kai: Complete Setup</h2>
+      </header>
+      <div class="section-body">
+        <p>XLink Kai is a LAN tunneling service that lets you play PS3 games in a local network <strong>over the Internet</strong>. It works with <strong>105 PS3 games</strong> verified as supporting LAN.</p>
+
+        <div class="callout callout--info">
+          <div class="callout__icon">ℹ️</div>
+          <div class="callout__content">
+            <p><strong>OFW compatibility</strong>: XLink Kai also works on <strong>OFW</strong> PS3. It leverages the game's <strong>LAN/System Link</strong> mode. No CFW required if the game offers this mode.</p>
+          </div>
+        </div>
+
+        <h3 class="sub-title">Required hardware</h3>
+        <ul class="checklist">
+          <li>A PS3 (<strong>OFW or CFW</strong>)</li>
+          <li>A PC/Mac/Raspberry Pi</li>
+          <li>1 or 2 Ethernet cables depending on the setup</li>
+          <li>An Internet connection</li>
+          <li>An XLink Kai account (free)</li>
+        </ul>
+
+        <h3 class="sub-title">Step 1: Create an XLink Kai account</h3>
+        <ol class="steps">
+          <li>Go to <a href="https://teamxlink.co.uk" target="_blank" rel="noopener">teamxlink.co.uk</a></li>
+          <li>Click <strong>"Sign Up"</strong> and fill out the form</li>
+          <li>Verify your email address and <strong>accept the data collection policy</strong> (GDPR)</li>
+          <li>Read and accept the <strong>Acceptable Use Policy</strong></li>
+        </ol>
+
+        <h3 class="sub-title">Step 2: Install XLink Kai on the PC</h3>
+        <ol class="steps">
+          <li>Download the latest XLink Kai version from <a href="https://teamxlink.co.uk/downloads.php" target="_blank" rel="noopener">teamxlink.co.uk/downloads.php</a></li>
+          <li>Install the software on your PC</li>
+          <li>Launch XLink Kai and sign in with your account</li>
+        </ol>
+
+        <h3 class="sub-title">Step 3: Network configuration (2 methods)</h3>
+
+        <h4 class="sub-sub-title">Method A: Fully wired setup (recommended)</h4>
+        <p>This is the method offering the <strong>lowest latency</strong> and the most stable connection.</p>
+        <pre class="diagram">Internet → Router ← PC (XLink Kai)
+             ↖ PS3</pre>
+        <ol class="steps">
+          <li>Connect the PC and PS3 to the same router via Ethernet cables</li>
+          <li>In XLink Kai, go to <strong>"Configure Kai"</strong> and select the network adapter connected to the PS3</li>
+          <li>Configure the PS3 as <strong>automatic network</strong> (DHCP)</li>
+        </ol>
+
+        <h4 class="sub-sub-title">Method B: Semi-wireless setup</h4>
+        <p>If full wiring is not possible, the PC can be on Wi-Fi <strong>but</strong> must be connected to the PS3 via Ethernet.</p>
+        <pre class="diagram">Internet → Wi-Fi Box → PC (XLink Kai, Wi-Fi)
+                     ↖ PS3 (Ethernet)</pre>
+        <ol class="steps">
+          <li>Connect the PC to the box via Wi-Fi</li>
+          <li>Connect the PS3 to the PC with an Ethernet cable (or a USB-Ethernet adapter if the PC has no Ethernet port)</li>
+          <li>In XLink Kai, select the <strong>Ethernet</strong> adapter (the one connected to the PS3)</li>
+        </ol>
+
+        <h3 class="sub-title">Step 4: PS3 configuration</h3>
+        <ol class="steps">
+          <li><strong>Start XLink Kai on the PC BEFORE the PS3</strong> (very important)</li>
+          <li>Turn on the PS3 and go to <strong>Settings → Network Settings → Internet Connection Settings</strong></li>
+          <li>Select <strong>"Custom"</strong> then <strong>"Automatic"</strong> for IP address and DHCP</li>
+          <li>For DNS, you can leave it automatic or use a public DNS such as <code class="dns">1.1.1.1</code></li>
+          <li>Save and test the connection</li>
+          <li><strong>You should get a DNS error (80710102)</strong> — this is <strong>normal and expected</strong>! It means the PS3 is not contacting PSN servers and XLink Kai is taking over</li>
+        </ol>
+
+        <div class="callout callout--warn">
+          <div class="callout__icon">⚠️</div>
+          <div class="callout__content">
+            <p><strong>Warning</strong>: If you have <strong>game updates</strong> installed on the PS3 hard drive, you may not be able to connect with other players. Go to <strong>"Game Data Utility"</strong> and delete updates for the affected games.</p>
+          </div>
+        </div>
+
+        <h3 class="sub-title">Step 5: Start a game</h3>
+        <ol class="steps">
+          <li>With XLink Kai running and connected on the PC</li>
+          <li>Turn on the PS3 (it should display the DNS error)</li>
+          <li>Launch a game supporting LAN</li>
+          <li>In XLink Kai, browse the <strong>"Arenas"</strong> (rooms) and join a session for your game</li>
+          <li>Other players from around the world will appear in the game as if they were on your local network</li>
+        </ol>
+
+        <h3 class="sub-title">Port forwarding</h3>
+        <p>XLink Kai uses <strong>port 30000</strong> (TCP and UDP) by default. Open this port on your router for the PC running XLink Kai.</p>
+        <ul class="checklist">
+          <li><strong>Port</strong>: 30000 (TCP and UDP)</li>
+          <li><strong>Protocol</strong>: Both (UDP &amp; TCP)</li>
+        </ul>
+
+        <h3 class="sub-title">XLink Kai tips</h3>
+        <ul class="checklist">
+          <li><strong>Check that your network is "Reachable"</strong>: In XLink Kai, click the magnifying glass. The diagnostic should show <strong>"YES"</strong> for Network Reachable</li>
+          <li><strong>Run XLink Kai as administrator</strong> on Windows (right-click → Run as administrator)</li>
+          <li><strong>Disable auto-save</strong> in racing games like F1 2010 to avoid conflicts</li>
+          <li><strong>Use a direct Ethernet cable</strong> between PC and PS3 if possible for maximum stability</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- DNS PRIVES -->
+    <section id="dns-prives" class="section">
+      <header class="section-head">
+        <span class="section-tag">04</span>
+        <h2 class="section-title">Private Servers via DNS (Online only)</h2>
+      </header>
+      <div class="section-body">
+        <p>For <strong>"Online only"</strong> games that have no LAN mode, the most common method is <strong>DNS redirection</strong>. Your PS3 is redirected to a replacement server that mimics the official server responses.</p>
+
+        <div class="callout callout--info">
+          <div class="callout__icon">ℹ️</div>
+          <div class="callout__content">
+            <p><strong>OFW/CFW compatibility</strong>: DNS redirection works on <strong>OFW</strong> and <strong>CFW</strong> PS3.<br>
+            No CFW required for DNS redirection alone.<br>
+            If the server requires an <strong>EBOOT patch</strong> or a modified version of the game, you will need to switch to <strong>CFW/HFW</strong>.</p>
+          </div>
+        </div>
+
+        <h3 class="sub-title">How it works</h3>
+        <p>The PS3 game contacts addresses like <code>cod7-ps3-lobby.demonware.net</code>. By changing the console's DNS to point to a private server, you redirect these requests to a replacement server.</p>
+
+        <h3 class="sub-title">DNS configuration on PS3</h3>
+        <ol class="steps">
+          <li>Go to <strong>Settings → Network Settings → Internet Connection Settings</strong></li>
+          <li>Select <strong>"Custom"</strong> then <strong>"Manual"</strong> for the DNS settings</li>
+          <li>Enter the DNS addresses of the private server you want to use</li>
+        </ol>
+
+        <p><strong>Example for Unreal Tournament 3:</strong></p>
+        <ul class="checklist">
+          <li>Primary DNS: <code class="dns">15.204.233.35</code></li>
+          <li>Secondary DNS: <code class="dns">1.1.1.1</code> (or any public DNS as fallback)</li>
+        </ul>
+
+        <div class="callout callout--tip">
+          <div class="callout__icon">💡</div>
+          <div class="callout__content">
+            <p><strong>CFW tip</strong>: With CFW, you can use <strong>ezDNS</strong>, a PS3 app that lets you <strong>save and quickly switch between multiple DNS profiles</strong> for different games. You can also use webMAN commands like <code>/netstatus.ps3?dns1=&lt;ip&gt;</code> to change the DNS quickly.</p>
+          </div>
+        </div>
+
+        <h3 class="sub-title">Custom/revival DNS servers overview</h3>
+        <div class="callout callout--note">
+          <p>For servers where the secondary DNS is not specified, use <code>1.1.1.1</code> or <code>8.8.4.4</code> as secondary.<br>
+          <strong>OFW</strong>: ✅ = works on official PS3 for DNS redirection alone. ⚠️ = may require an EBOOT patch/CFW depending on the game.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Server</th><th>Primary DNS</th><th>Secondary DNS</th><th>OFW</th><th>Games / Notes</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>Battlefield 2, 3, Sims</strong></td><td><code class="dns">151.241.100.80</code> or <code class="dns">37.16.74.123</code></td><td><code class="dns">1.1.1.1</code> or <code class="dns">8.8.4.4</code></td><td>✅</td><td>Battlefield 2, Battlefield 3, Sims</td></tr>
+              <tr><td><strong>Demon's Souls</strong></td><td><code class="dns">142.93.245.186</code></td><td><code class="dns">1.1.1.1</code> or <code class="dns">8.8.4.4</code></td><td>✅</td><td>Demon's Souls</td></tr>
+              <tr><td><strong>Destination (PS3) Home</strong></td><td><code class="dns">52.86.120.101</code></td><td><code class="dns">1.1.1.1</code> or <code class="dns">8.8.4.4</code></td><td>✅</td><td>PS Home, Wipeout HD</td></tr>
+              <tr><td><strong>Home Headquarters</strong></td><td><code class="dns">64.20.35.146</code></td><td><code class="dns">1.1.1.1</code> or <code class="dns">8.8.4.4</code></td><td>✅</td><td>PlayStation Home HQ</td></tr>
+              <tr><td><strong>Medal of Honor 2010</strong></td><td><code class="dns">128.140.0.23</code></td><td><code class="dns">1.1.1.1</code> or <code class="dns">8.8.4.4</code></td><td>✅</td><td>Medal of Honor 2010</td></tr>
+              <tr><td><strong>ModNation Racers</strong></td><td><code class="dns">45.32.179.33</code></td><td><code class="dns">8.8.8.8</code></td><td>✅</td><td>ModNation Racers</td></tr>
+              <tr><td><strong>Starhawk &amp; Warhawk</strong></td><td><code class="dns">198.100.158.95</code></td><td><code class="dns">1.1.1.1</code> or <code class="dns">8.8.4.4</code></td><td>✅</td><td>Starhawk, Warhawk</td></tr>
+              <tr><td><strong>SVR 11, WWE 12, 13, 2K14, Lucha Libre AAA</strong></td><td><code class="dns">192.236.168.216</code></td><td><code class="dns">192.255.226.201</code></td><td>✅</td><td>SVR 11, WWE 12, WWE 13, WWE 2K14, Lucha Libre AAA</td></tr>
+              <tr><td><strong>Uncharted 2 &amp; 3</strong></td><td><code class="dns">51.75.22.125</code></td><td><code class="dns">1.1.1.1</code> or <code class="dns">8.8.4.4</code></td><td>✅</td><td>Uncharted 2, Uncharted 3</td></tr>
+              <tr><td><strong>Unreal Tournament 3</strong></td><td><code class="dns">15.204.233.35</code></td><td><code class="dns">1.1.1.1</code></td><td>✅</td><td>Unreal Tournament 3</td></tr>
+              <tr><td><strong>WipeOut HD</strong></td><td><code class="dns">147.135.213.57</code>*</td><td><code class="dns">1.1.1.1</code> or <code class="dns">8.8.4.4</code></td><td>✅</td><td>Wipeout HD</td></tr>
+              <tr><td><strong>PES 2018</strong></td><td><code class="dns">162.35.166.153</code></td><td><code class="dns">162.35.166.153</code></td><td>✅</td><td>PES 2018</td></tr>
+              <tr><td><strong>PS3 Rewired</strong></td><td><code class="dns">67.222.156.250</code></td><td><code class="dns">1.1.1.1</code></td><td>✅</td><td>See detailed list below</td></tr>
+              <tr><td><strong>PS Online (One)</strong></td><td><code class="dns">185.194.142.4</code></td><td><code class="dns">1.1.1.1</code> or <code class="dns">8.8.4.4</code></td><td>✅</td><td>See detailed list below</td></tr>
+              <tr><td><strong>PSORG</strong></td><td><code class="dns">51.79.41.185</code></td><td><code class="dns">1.1.1.1</code> or <code class="dns">8.8.4.4</code></td><td>✅</td><td>See detailed list below</td></tr>
+              <tr><td><strong>PS3 Reborn</strong></td><td><code class="dns">146.190.205.197</code></td><td><code class="dns">1.1.1.1</code> or <code class="dns">8.8.4.4</code></td><td>✅</td><td>See detailed list below</td></tr>
+              <tr><td><strong>Warehouse Gaming</strong></td><td><code class="dns">209.38.53.69</code></td><td><code class="dns">1.1.1.1</code> or <code class="dns">8.8.4.4</code></td><td>✅</td><td>Reborn partner, same games as associated list</td></tr>
+              <tr><td><strong>SaveMGO</strong></td><td><code class="dns">52.86.120.101</code></td><td><code class="dns">1.1.1.1</code></td><td>✅</td><td>Metal Gear Online 2</td></tr>
+              <tr><td><strong>UT3MOD</strong></td><td><code class="dns">15.204.233.35</code></td><td><code class="dns">1.1.1.1</code></td><td>✅</td><td>Unreal Tournament 3</td></tr>
+              <tr><td><strong>ModNation Racers Revival</strong></td><td><code class="dns">45.32.179.33</code></td><td><code class="dns">8.8.8.8</code></td><td>✅</td><td>ModNation Racers</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="sub-title">Games per custom/revival DNS server</h3>
+
+        <div class="server-card">
+          <h4>Battlefield 2, 3 and Sims</h4>
+          <p>DNS: <code class="dns">151.241.100.80</code> or <code class="dns">37.16.74.123</code></p>
+          <p>Games: Battlefield 2, Battlefield 3, Sims</p>
+        </div>
+
+        <div class="server-card">
+          <h4>Demon's Souls</h4>
+          <p>DNS: <code class="dns">142.93.245.186</code></p>
+          <p>Game: Demon's Souls</p>
+        </div>
+
+        <div class="server-card">
+          <h4>Destination (PS3) Home</h4>
+          <p>DNS: <code class="dns">52.86.120.101</code></p>
+          <p>Games / services: PlayStation Home, Wipeout HD</p>
+          <p>Video: <a href="https://www.youtube.com/watch?v=NeATkBoW3sU" target="_blank" rel="noopener">https://www.youtube.com/watch?v=NeATkBoW3sU</a></p>
+        </div>
+
+        <div class="server-card">
+          <h4>Home Headquarters</h4>
+          <p>DNS: <code class="dns">64.20.35.146</code></p>
+          <p>Service: PlayStation Home HQ</p>
+        </div>
+
+        <div class="server-card">
+          <h4>Medal of Honor 2010</h4>
+          <p>DNS: <code class="dns">128.140.0.23</code></p>
+          <p>Game: Medal of Honor 2010</p>
+        </div>
+
+        <div class="server-card">
+          <h4>ModNation Racers</h4>
+          <p>DNS: <code class="dns">45.32.179.33</code></p>
+          <p>Game: ModNation Racers</p>
+        </div>
+
+        <div class="server-card">
+          <h4>Starhawk and Warhawk</h4>
+          <p>DNS: <code class="dns">198.100.158.95</code></p>
+          <p>Games: Starhawk, Warhawk</p>
+        </div>
+
+        <div class="server-card">
+          <h4>SVR 11, WWE 12, 13, 2K14, Lucha Libre AAA</h4>
+          <p>Primary DNS: <code class="dns">192.236.168.216</code></p>
+          <p>Secondary DNS: <code class="dns">192.255.226.201</code></p>
+          <p>Games: SVR 11, WWE 12, WWE 13, WWE 2K14, Lucha Libre AAA</p>
+        </div>
+
+        <div class="server-card">
+          <h4>Uncharted 2 &amp; 3</h4>
+          <p>DNS: <code class="dns">51.75.22.125</code></p>
+          <p>Games: Uncharted 2, Uncharted 3</p>
+        </div>
+
+        <div class="server-card">
+          <h4>Unreal Tournament 3</h4>
+          <p>DNS: <code class="dns">15.204.233.35</code></p>
+          <p>Game: Unreal Tournament 3</p>
+        </div>
+
+        <div class="server-card">
+          <h4>WipeOut HD</h4>
+          <p>DNS: <code class="dns">147.135.213.57</code>*</p>
+          <p>Game: Wipeout HD</p>
+          <p>Note: Wipeout HD can also use the main DNS, Destination Home DNS or ReWired DNS, as they share the same server.</p>
+        </div>
+
+        <div class="server-card">
+          <h4>PES 2018</h4>
+          <p>Primary DNS: <code class="dns">162.35.166.153</code></p>
+          <p>Secondary DNS: <code class="dns">162.35.166.153</code></p>
+          <p>Game: PES 2018</p>
+        </div>
+
+        <div class="server-card">
+          <h4>PS3 Rewired</h4>
+          <p>DNS: <code class="dns">67.222.156.250</code></p>
+          <p>Games:</p>
+          <ul class="game-list">
+            <li>Battlefield 1943</li>
+            <li>Battlefield BC 2</li>
+            <li>Killzone 2 and 3</li>
+            <li>Lord of the Rings: Conquest</li>
+            <li>Medal of Honor: Airborne (create a server via unranked games)</li>
+            <li>Mercenaries 2</li>
+            <li>MotorStorm Monument Valley</li>
+            <li>MotorStorm Pacific Rift</li>
+            <li>MotorStorm: Apocalypse</li>
+            <li>Resistance 2</li>
+            <li>Resistance: Fall of Man</li>
+            <li>Test Drive Unlimited 2</li>
+            <li>Wipeout HD</li>
+            <li>World at War</li>
+          </ul>
+        </div>
+
+        <div class="server-card">
+          <h4>PS Online (One)</h4>
+          <p>DNS: <code class="dns">185.194.142.4</code></p>
+          <p>Games:</p>
+          <ul class="game-list">
+            <li>Ratchet: Deadlocked HD</li>
+            <li>SOCOM Confrontation</li>
+            <li>Twisted Metal Black</li>
+            <li>Wipeout HD</li>
+          </ul>
+        </div>
+
+        <div class="server-card">
+          <h4>PSORG</h4>
+          <p>DNS: <code class="dns">51.79.41.185</code></p>
+          <p>Games / services:</p>
+          <ul class="game-list">
+            <li>Ad-hoc Party</li>
+            <li>Burnout Paradise</li>
+            <li>Calling All Cars</li>
+            <li>Dirt 2 DiRTNeT</li>
+            <li>Driver San Francisco demo</li>
+            <li>F1 2010</li>
+            <li>Heroes over Europe</li>
+            <li>I am alive</li>
+            <li>Motionsports adrenaline</li>
+            <li>Ratchet &amp; Clank: Up Your Arsenal HD</li>
+            <li>Ratchet: Deadlocked HD</li>
+            <li>Ridge racer unbound</li>
+            <li>Starhawk Online Beta</li>
+            <li>Top Gun</li>
+          </ul>
+        </div>
+
+        <div class="server-card">
+          <h4>PS3 Reborn</h4>
+          <p>DNS: <code class="dns">146.190.205.197</code></p>
+          <p>Games:</p>
+          <ul class="game-list game-list--cols">
+            <li>007: Bloodstone</li>
+            <li>007: Goldeneye Reloaded</li>
+            <li>007: Legends</li>
+            <li>007: Quantum of Solace</li>
+            <li>Ashes cricket 2009</li>
+            <li>AVATAR (James Cameron)</li>
+            <li>Band Hero</li>
+            <li>Blacksite Area 51</li>
+            <li>Call of Duty 3</li>
+            <li>ColinMcRae DiRT</li>
+            <li>DJ Hero</li>
+            <li>DJ Hero 2</li>
+            <li>Driver San Francisco</li>
+            <li>Enemy Territory: Quake Wars</li>
+            <li>Far Cry 2</li>
+            <li>G.R.A.W./Ghost Recon Advanced Warfighter 2</li>
+            <li>Geometry Wars 3: Dimensions Evolved</li>
+            <li>Ghost Recon: Future Soldier</li>
+            <li>Ghostbusters - The VideoGame</li>
+            <li>Guitar Hero 3: Legends of Rock</li>
+            <li>Guitar Hero 5</li>
+            <li>Guitar Hero: Aerosmith</li>
+            <li>Guitar Hero: Metallica</li>
+            <li>Guitar Hero: Smash/Greatest Hits</li>
+            <li>Guitar Hero: Van Halen</li>
+            <li>Guitar Hero: Warriors of Rock</li>
+            <li>Guitar Hero: World Tour</li>
+            <li>HAZE (2008)</li>
+            <li>Heroes Over Europe</li>
+            <li>History Channel: Battle for the Pacific</li>
+            <li>International Cricket 2010</li>
+            <li>Marvel Ultimate Alliance 2</li>
+            <li>Need for Speed Carbon</li>
+            <li>Operation Flashpoint: Dragon Rising (main servers work, occasionally buggy)</li>
+            <li>Overlord II</li>
+            <li>Pure Football</li>
+            <li>Race Driver: GRID</li>
+            <li>SCORE International Baja 1000</li>
+            <li>Shaun White Skateboarding</li>
+            <li>Shaun White Snowboarding</li>
+            <li>Singularity</li>
+            <li>Smackdown VS Raw 2008</li>
+            <li>Soldier of Fortune: Payback</li>
+            <li>Splinter Cell: Double Agent</li>
+            <li>Stuntman Ignition</li>
+            <li>The Club</li>
+            <li>Tom Clancy's: EndWar</li>
+            <li>Tony Hawk: SHRED</li>
+            <li>Top Gun</li>
+            <li>Transformers: Dark of the Moon</li>
+            <li>Transformers: Fall of Cybertron</li>
+            <li>Transformers: Revenge of the Fallen</li>
+            <li>Transformers: Rise of the Dark Spark</li>
+            <li>Transformers: War for Cybertron</li>
+            <li>Turok</li>
+            <li>Wolfenstein (2009)</li>
+            <li>WWE All Stars</li>
+          </ul>
+        </div>
+
+        <div class="server-card">
+          <h4>Warehouse Gaming</h4>
+          <p>DNS: <code class="dns">209.38.53.69</code></p>
+          <p>Reborn partner: can use either DNS for the following games.</p>
+          <p>Games:</p>
+          <ul class="game-list">
+            <li>DJ Hero</li>
+            <li>DJ Hero 2</li>
+            <li>Need for Speed Carbon</li>
+            <li>Transformers: Revenge of the Fallen</li>
+            <li>Transformers: War for Cybertron</li>
+            <li>Transformers: Dark of the Moon</li>
+            <li>Transformers: Fall of Cybertron</li>
+            <li>Transformers: Rise of the Dark Spark</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- EMULATEURS -->
+    <section id="emulateurs" class="section">
+      <header class="section-head">
+        <span class="section-tag">05</span>
+        <h2 class="section-title">PC Server Emulators</h2>
+      </header>
+      <div class="section-body">
+        <p>For games whose infrastructure is more complex (like EA Plasma services), you need to run an actual <strong>server emulator</strong> on a PC.</p>
+
+        <div class="callout callout--info">
+          <div class="callout__icon">ℹ️</div>
+          <div class="callout__content">
+            <p><strong>OFW/CFW compatibility</strong>: These methods may require <strong>CFW/HFW</strong> if an EBOOT patch is required. Check the server documentation. Some games may work on OFW if the server only requires DNS redirection.</p>
+          </div>
+        </div>
+
+        <h3 class="sub-title">Arcadia (EA Plasma)</h3>
+        <p>Arcadia is a server emulator for the shut-down <strong>EA Plasma</strong> backend services, mainly targeting PS3 games.</p>
+
+        <p><strong>Supported games:</strong></p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Game</th><th>Status</th><th>Notes</th></tr></thead>
+            <tbody>
+              <tr><td>Mercenaries 2</td><td>✅ Online</td><td>No leaderboards</td></tr>
+              <tr><td>Medal of Honor Airborne</td><td>✅ Online</td><td>No stats</td></tr>
+              <tr><td>Lord of the Rings Conquest</td><td>✅ Online*</td><td>*Requires PC or PS3 mod to host</td></tr>
+              <tr><td>Bad Company 2</td><td>✅ Coop only</td><td>Requires Onslaught DLC</td></tr>
+              <tr><td>Battlefield 1943</td><td>✅ Online**</td><td>Requires BEACHMOD</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p><strong>PS3 setup:</strong></p>
+        <ol class="steps">
+          <li>Follow the <strong>PSRewired</strong> guide for PS3</li>
+          <li>Launch the game and sign in to PSN when prompted</li>
+        </ol>
+
+        <h3 class="sub-title">PSHome MultiServer</h3>
+        <p>For <strong>PlayStation Home</strong>, PSHome MultiServer is a unified open-source server that lets you host custom lobbies.</p>
+      </div>
+    </section>
+
+    <!-- LISTE JEUX -->
+    <section id="liste-jeux" class="section">
+      <header class="section-head">
+        <span class="section-tag">06</span>
+        <h2 class="section-title">Games from your list compatible with these methods</h2>
+      </header>
+      <div class="section-body">
+        <h3 class="sub-title">🎮 XLink Kai compatible games (native LAN confirmed)</h3>
+        <p>The following games from your list are <strong>confirmed to support LAN</strong> and work with XLink Kai.<br>
+        <strong>OFW and CFW compatible</strong>: CFW is not required if the game supports LAN/System Link mode.</p>
+
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Game</th><th>LAN players</th><th>Type</th><th>Notes</th></tr></thead>
+            <tbody>
+              <tr><td>Call of Duty 4: Modern Warfare</td><td>18</td><td>🌐 Native LAN</td><td>Tested and working</td></tr>
+              <tr><td>Call of Duty: Modern Warfare 2</td><td>18</td><td>🌐 Native LAN</td><td>Tested and working</td></tr>
+              <tr><td>Call of Duty: World at War</td><td>18</td><td>🌐 Native LAN</td><td>Tested and working</td></tr>
+              <tr><td>Blur</td><td>20</td><td>🌐 Native LAN</td><td>Tested and working</td></tr>
+              <tr><td>DiRT</td><td>16</td><td>🌐 Native LAN</td><td>Tested and working</td></tr>
+              <tr><td>DiRT 2</td><td>16</td><td>🌐 Native LAN</td><td>Tested and working</td></tr>
+              <tr><td>F1 2010</td><td>16</td><td>🌐 Native LAN</td><td>Tested and working (disable auto-save)</td></tr>
+              <tr><td>Ferrari Challenge</td><td>16</td><td>🌐 Native LAN</td><td>Tested and working</td></tr>
+              <tr><td>Formula 1 Championship Edition</td><td>8</td><td>🌐 Native LAN</td><td>Tested and working</td></tr>
+              <tr><td>Borderlands</td><td>4</td><td>🌐 LAN co-op</td><td>Tested and working</td></tr>
+              <tr><td>Haze</td><td>4</td><td>🌐 LAN co-op</td><td>Tested and working</td></tr>
+              <tr><td>Unreal Tournament 3</td><td>16</td><td>🌐 Native LAN</td><td>Tested and working</td></tr>
+              <tr><td>F.E.A.R.</td><td>16</td><td>🌐 Native LAN</td><td>Tested and working</td></tr>
+              <tr><td>Condemned 2: Bloodshot</td><td>8</td><td>🌐 Native LAN</td><td>Tested and working</td></tr>
+              <tr><td>Rainbow Six Vegas</td><td>16</td><td>🌐 Native LAN</td><td>Tested and working</td></tr>
+              <tr><td>Ghost Recon Advanced Warfighter 2</td><td>16</td><td>🌐 Native LAN</td><td>Tested and working</td></tr>
+              <tr><td>007: Quantum of Solace</td><td>12</td><td>🌐 Native LAN</td><td>Tested and working</td></tr>
+              <tr><td>Kane &amp; Lynch: Dead Men</td><td>8</td><td>🌐 Native LAN</td><td>Confirmed</td></tr>
+              <tr><td>Saints Row 2</td><td>12</td><td>🌐 Native LAN</td><td>Confirmed</td></tr>
+              <tr><td>Red Faction: Guerrilla</td><td>16</td><td>🌐 Native LAN</td><td>Confirmed</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout callout--note">
+          <p><strong>Note</strong>: XLink Kai supports <strong>105 PS3 games</strong> in total. The full list is available at <a href="https://www.teamxlink.co.uk/supported-games" target="_blank" rel="noopener">teamxlink.co.uk/supported-games</a>.</p>
+        </div>
+
+        <h3 class="sub-title">🎮 Games compatible with private DNS servers</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Game</th><th>Primary DNS</th><th>Secondary DNS</th><th>Server</th><th>OFW</th></tr></thead>
+            <tbody>
+              <tr><td>Unreal Tournament 3</td><td><code class="dns">15.204.233.35</code></td><td><code class="dns">1.1.1.1</code></td><td>UT3MOD</td><td>✅</td></tr>
+              <tr><td>MotorStorm</td><td><code class="dns">67.222.156.250</code></td><td><code class="dns">1.1.1.1</code></td><td>PS Rewired</td><td>✅</td></tr>
+              <tr><td>MotorStorm: Pacific Rift</td><td><code class="dns">67.222.156.250</code></td><td><code class="dns">1.1.1.1</code></td><td>PS Rewired</td><td>✅</td></tr>
+              <tr><td>ModNation Racers</td><td><code class="dns">45.32.179.33</code></td><td><code class="dns">8.8.8.8</code></td><td>MNR Revival</td><td>✅</td></tr>
+              <tr><td>Demon's Souls</td><td><code class="dns">142.93.245.186</code></td><td><code class="dns">1.1.1.1</code> or <code class="dns">8.8.4.4</code></td><td>Demon's Souls</td><td>✅</td></tr>
+              <tr><td>Uncharted 2 &amp; 3</td><td><code class="dns">51.75.22.125</code></td><td><code class="dns">1.1.1.1</code> or <code class="dns">8.8.4.4</code></td><td>Uncharted 2 &amp; 3</td><td>✅</td></tr>
+              <tr><td>Starhawk &amp; Warhawk</td><td><code class="dns">198.100.158.95</code></td><td><code class="dns">1.1.1.1</code> or <code class="dns">8.8.4.4</code></td><td>Starhawk/Warhawk</td><td>✅</td></tr>
+              <tr><td>PES 2018</td><td><code class="dns">162.35.166.153</code></td><td><code class="dns">162.35.166.153</code></td><td>PES 2018</td><td>✅</td></tr>
+              <tr><td>Wipeout HD</td><td><code class="dns">147.135.213.57</code>*</td><td><code class="dns">1.1.1.1</code> or <code class="dns">8.8.4.4</code></td><td>Wipeout HD</td><td>✅</td></tr>
+              <tr><td>SVR 11, WWE 12, 13, 2K14, Lucha Libre AAA</td><td><code class="dns">192.236.168.216</code></td><td><code class="dns">192.255.226.201</code></td><td>SVR/WWE/AAA</td><td>✅</td></tr>
+              <tr><td>Battlefield 2, 3, Sims</td><td><code class="dns">151.241.100.80</code> or <code class="dns">37.16.74.123</code></td><td><code class="dns">1.1.1.1</code> or <code class="dns">8.8.4.4</code></td><td>Battlefield/Sims</td><td>✅</td></tr>
+              <tr><td>Medal of Honor 2010</td><td><code class="dns">128.140.0.23</code></td><td><code class="dns">1.1.1.1</code> or <code class="dns">8.8.4.4</code></td><td>MOH 2010</td><td>✅</td></tr>
+              <tr><td>PS3 Rewired</td><td><code class="dns">67.222.156.250</code></td><td><code class="dns">1.1.1.1</code></td><td>Multiple games</td><td>✅</td></tr>
+              <tr><td>PS Online (One)</td><td><code class="dns">185.194.142.4</code></td><td><code class="dns">1.1.1.1</code> or <code class="dns">8.8.4.4</code></td><td>Ratchet, SOCOM, Twisted Metal, Wipeout</td><td>✅</td></tr>
+              <tr><td>PSORG</td><td><code class="dns">51.79.41.185</code></td><td><code class="dns">1.1.1.1</code> or <code class="dns">8.8.4.4</code></td><td>Burnout, F1 2010, etc.</td><td>✅</td></tr>
+              <tr><td>PS3 Reborn</td><td><code class="dns">146.190.205.197</code></td><td><code class="dns">1.1.1.1</code> or <code class="dns">8.8.4.4</code></td><td>Many games</td><td>✅</td></tr>
+              <tr><td>Warehouse Gaming</td><td><code class="dns">209.38.53.69</code></td><td><code class="dns">1.1.1.1</code> or <code class="dns">8.8.4.4</code></td><td>Reborn partner</td><td>✅</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="sub-title">🎮 Games compatible with PC server emulators</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Game</th><th>Emulator</th><th>Setup</th><th>OFW</th></tr></thead>
+            <tbody>
+              <tr><td>Medal of Honor Airborne</td><td>Arcadia</td><td>PS Rewired DNS + PC</td><td>⚠️</td></tr>
+              <tr><td>Lord of the Rings: Conquest</td><td>Arcadia</td><td>PS Rewired DNS + PC</td><td>⚠️</td></tr>
+              <tr><td>Battlefield 1943</td><td>Arcadia</td><td>PS Rewired DNS + BEACHMOD</td><td>⚠️</td></tr>
+              <tr><td>Bad Company 2</td><td>Arcadia</td><td>PS Rewired DNS + Onslaught DLC</td><td>⚠️</td></tr>
+              <tr><td>Mercenaries 2</td><td>Arcadia</td><td>PS Rewired DNS + PC</td><td>⚠️</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout callout--note">
+          <p>⚠️ = may require an EBOOT patch or CFW/HFW depending on the game.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- LAN LOCAL -->
+    <section id="lan-local" class="section">
+      <header class="section-head">
+        <span class="section-tag">07</span>
+        <h2 class="section-title">LAN setup between two PS3 consoles (reminder)</h2>
+      </header>
+      <div class="section-body">
+        <p>To play on a <strong>local</strong> LAN (no Internet), here is the basic setup:</p>
+        <ol class="steps">
+          <li><strong>Connection</strong>: Connect both PS3 consoles to a <strong>Gigabit router</strong> with Cat5e or Cat6 Ethernet cables</li>
+          <li><strong>Network</strong>: Leave both PS3 on <strong>Automatic</strong> (DHCP) or assign fixed IPs</li>
+          <li><strong>Game version</strong>: Both PS3 must have <strong>exactly the same version</strong> (update, DLC)</li>
+          <li><strong>LAN mode</strong>: In the multiplayer menu, look for <strong>"LAN"</strong>, <strong>"System Link"</strong> or <strong>"Local Network"</strong></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- DEPANNAGE -->
+    <section id="depannage" class="section">
+      <header class="section-head">
+        <span class="section-tag">08</span>
+        <h2 class="section-title">Troubleshooting</h2>
+      </header>
+      <div class="section-body">
+        <h3 class="sub-title">XLink Kai issues</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Issue</th><th>Solution</th></tr></thead>
+            <tbody>
+              <tr><td>DNS error on PS3</td><td>✅ <strong>Normal</strong>! It's the sign XLink Kai is working.</td></tr>
+              <tr><td>"Network Not Reachable"</td><td>Open port 30000 (TCP/UDP) on your router. Check that your firewall isn't blocking XLink Kai.</td></tr>
+              <tr><td>Can't join other players</td><td>Delete game updates in "Game Data Utility" on PS3.</td></tr>
+              <tr><td>PS3 doesn't detect XLink Kai</td><td><strong>Start XLink Kai BEFORE the PS3</strong>. Check the correct network adapter is selected in "Configure Kai".</td></tr>
+              <tr><td>High latency</td><td>Use a fully wired connection. Avoid Wi-Fi for the PS3.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="sub-title">DNS server issues</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Issue</th><th>Solution</th></tr></thead>
+            <tbody>
+              <tr><td>Game won't connect</td><td>Check the DNS is correctly entered (numeric IP only, no hostname).</td></tr>
+              <tr><td>"PSN connection error"</td><td>Some private servers require an EBOOT patch or a specific game version.</td></tr>
+              <tr><td>Server not responding</td><td>Check the server status on its Discord or website.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- AVERTISSEMENTS -->
+    <section id="avertissements" class="section">
+      <header class="section-head">
+        <span class="section-tag">09</span>
+        <h2 class="section-title">Warnings and precautions</h2>
+      </header>
+      <div class="section-body">
+        <ul class="warn-list">
+          <li><strong>Risk of PSN ban</strong>: The use of unofficial servers or XLink Kai may, in rare cases, result in a PlayStation Network ban. <strong>This risk also exists on OFW</strong> if you connect to the official PSN or to unofficial services. Stay cautious.</li>
+          <li><strong>Community and maintenance</strong>: These servers are run by enthusiasts. Their availability depends on the community.</li>
+          <li><strong>Compatibility</strong>: Not all games are supported. Check the compatibility lists before starting.</li>
+          <li><strong>CFW/HFW and games</strong>: Using CFW/HFW to play online must be done with caution. Avoid connecting to the official PSN with CFW to avoid risks.</li>
+          <li><strong>OFW</strong>: DNS redirection alone does not require CFW, but some servers may require EBOOT patches or modified files.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- RESSOURCES -->
+    <section id="ressources" class="section">
+      <header class="section-head">
+        <span class="section-tag">10</span>
+        <h2 class="section-title">Useful resources</h2>
+      </header>
+      <div class="section-body">
+        <ul class="resource-list">
+          <li><a href="https://teamxlink.co.uk" target="_blank" rel="noopener"><strong>XLink Kai</strong>: teamxlink.co.uk</a></li>
+          <li><a href="https://status.teamxlink.co.uk/" target="_blank" rel="noopener"><strong>XLink Kai status</strong>: status.teamxlink.co.uk</a></li>
+          <li><a href="https://discord.gg/UyyjNpa" target="_blank" rel="noopener"><strong>XLink Kai Discord</strong>: discord.gg/UyyjNpa</a></li>
+          <li><a href="https://www.teamxlink.co.uk/supported-games" target="_blank" rel="noopener"><strong>XLink Kai supported games</strong>: teamxlink.co.uk/supported-games</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1Wn2EkQj_bZpgrT-xiDbqHkx91jcCHn34nXkl2Sv0GOs/edit#gid=0" target="_blank" rel="noopener"><strong>PS3 private servers list</strong>: Google Sheets - Private Server List</a></li>
+          <li><a href="https://psrewired.com/" target="_blank" rel="noopener"><strong>PS Rewired</strong>: psrewired.com</a></li>
+          <li><a href="https://github.com/valters-tomsons/arcadia" target="_blank" rel="noopener"><strong>Arcadia (EA Plasma)</strong>: github.com/valters-tomsons/arcadia</a></li>
+          <li><a href="https://backloggd.com/u/SolarisTM/list/online-server-ps3" target="_blank" rel="noopener"><strong>PS3 Online Server List</strong>: Backloggd - SolarisTM</a></li>
+        </ul>
+
+        <p class="footer-note"><em>Guide created for the PS3 OFW/CFW community. Have fun! By LvSs7...et vous...</em></p>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <p>PS3 Revival Guide — Community document. Servers are managed by independent third parties.</p>
+      <a href="#top" class="back-to-top">Back to top ↑</a>
+    </footer>
+  </main>
+
+  <!-- Scroll to top button -->
+  <button id="scrollTop" class="scroll-top" aria-label="Scroll back to top" title="Back to top">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <!-- Copy toast -->
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>
