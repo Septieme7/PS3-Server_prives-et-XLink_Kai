@@ -270,10 +270,18 @@
           <li><strong>You should get a DNS error (80710102)</strong> — this is <strong>normal and expected</strong>! It means the PS3 is not contacting PSN servers and XLink Kai is taking over</li>
         </ol>
 
-        <div class="callout callout--warn">
-          <div class="callout__icon">⚠️</div>
+        <div class="callout callout--info">
+          <div class="callout__icon">💡</div>
           <div class="callout__content">
-            <p><strong>Warning</strong>: If you have <strong>game updates</strong> installed on the PS3 hard drive, you may not be able to connect with other players. Go to <strong>"Game Data Utility"</strong> and delete updates for the affected games.</p>
+            <p><strong>Troubleshooting: multiplayer connection issues or freezes</strong></p>
+            <p>If a game encounters <strong>connection problems</strong> with other players or <strong>abnormal freezes</strong>, its <strong>update (patch)</strong> may be corrupted or conflicting with your current network configuration.</p>
+            <p><strong>Temporary fix:</strong></p>
+            <ol>
+              <li>Go to <strong>Game &gt; Game Data Utility</strong> in the XMB.</li>
+              <li>Locate the affected game file and <strong>delete it</strong> (this removes the patch and installed data, <strong>but not your saves</strong>).</li>
+              <li>Relaunch the game <strong>without signing in to PSN</strong> to check if the issue is resolved.</li>
+            </ol>
+            <p><strong>⚠️ Important</strong>: this disables <strong>online play</strong> until the update is reinstalled. To play multiplayer again, you'll need to sign in to PSN and <strong>redownload the patch</strong>. Never delete a file from <strong>"Saved Data Utility (PS3)"</strong> — that would erase your progress.</p>
           </div>
         </div>
 
@@ -762,7 +770,7 @@
             <tbody>
               <tr><td>DNS error on PS3</td><td>✅ <strong>Normal</strong>! It's the sign XLink Kai is working.</td></tr>
               <tr><td>"Network Not Reachable"</td><td>Open port 30000 (TCP/UDP) on your router. Check that your firewall isn't blocking XLink Kai.</td></tr>
-              <tr><td>Can't join other players</td><td>Delete game updates in "Game Data Utility" on PS3.</td></tr>
+              <tr><td>Can't join other players</td><td>Check that <strong>all PS3 consoles are using the same version</strong> of the game (patch, DLC). As a last resort, delete the patch in <strong>"Game Data Utility"</strong> (⚠️ disables online play until the patch is reinstalled).</td></tr>
               <tr><td>PS3 doesn't detect XLink Kai</td><td><strong>Start XLink Kai BEFORE the PS3</strong>. Check the correct network adapter is selected in "Configure Kai".</td></tr>
               <tr><td>High latency</td><td>Use a fully wired connection. Avoid Wi-Fi for the PS3.</td></tr>
             </tbody>

@@ -270,10 +270,18 @@
           <li><strong>Tu dois obtenir une erreur DNS (80710102)</strong> — c'est <strong>normal et attendu</strong> ! Cela signifie que la PS3 ne contacte pas les serveurs PSN et que XLink Kai prend le relais</li>
         </ol>
 
-        <div class="callout callout--warn">
-          <div class="callout__icon">⚠️</div>
+        <div class="callout callout--info">
+          <div class="callout__icon">💡</div>
           <div class="callout__content">
-            <p><strong>Attention</strong> : Si tu as des <strong>mises à jour de jeu</strong> installées sur le disque dur de la PS3, tu pourrais ne pas pouvoir te connecter avec d'autres joueurs. Va dans <strong>"Utilitaires de données de jeu"</strong> et supprime les mises à jour pour les jeux concernés.</p>
+            <p><strong>Dépannage : problèmes de connexion ou freezes en multijoueur</strong></p>
+            <p>Si un jeu rencontre des <strong>problèmes de connexion</strong> avec d'autres joueurs ou des <strong>freezes anormaux</strong>, il est possible que sa <strong>mise à jour (patch)</strong> soit corrompue ou entre en conflit avec ta configuration réseau actuelle.</p>
+            <p><strong>Solution temporaire :</strong></p>
+            <ol>
+              <li>Va dans <strong>Jeu &gt; Utilitaires de données de jeu</strong> sur le XMB.</li>
+              <li>Localise le fichier du jeu concerné et <strong>supprime-le</strong> (cela efface le patch et les données installées, <strong>mais pas tes sauvegardes</strong>).</li>
+              <li>Relance le jeu <strong>sans te connecter au PSN</strong> pour vérifier si le problème est résolu.</li>
+            </ol>
+            <p><strong>⚠️ Important</strong> : cette manipulation <strong>désactive le jeu en ligne</strong> tant que la mise à jour n'est pas réinstallée. Pour rejouer en multijoueur, tu devras retourner sur le PSN et <strong>retélécharger le patch</strong>. Ne supprime <strong>jamais</strong> un fichier dans <strong>"Utilitaire de données sauvegardées (PS3)"</strong> — cela effacerait ta progression.</p>
           </div>
         </div>
 
@@ -762,7 +770,7 @@
             <tbody>
               <tr><td>Erreur DNS sur PS3</td><td>✅ <strong>Normal</strong> ! C'est le signe que XLink Kai fonctionne.</td></tr>
               <tr><td>"Network Not Reachable"</td><td>Ouvre le port 30000 (TCP/UDP) sur ton routeur. Vérifie que le pare-feu ne bloque pas XLink Kai.</td></tr>
-              <tr><td>Impossible de rejoindre d'autres joueurs</td><td>Supprime les mises à jour de jeu dans "Utilitaires de données de jeu" sur PS3.</td></tr>
+              <tr><td>Impossible de rejoindre d'autres joueurs</td><td>Vérifie que <strong>toutes les PS3 utilisent la même version</strong> du jeu (patch, DLC). En dernier recours, supprime le patch dans <strong>"Utilitaires de données de jeu"</strong> (⚠️ désactive le jeu en ligne tant que le patch n'est pas réinstallé).</td></tr>
               <tr><td>PS3 ne détecte pas XLink Kai</td><td><strong>Allume XLink Kai AVANT la PS3</strong>. Vérifie que la bonne carte réseau est sélectionnée dans "Configure Kai".</td></tr>
               <tr><td>Latence élevée</td><td>Utilise une connexion entièrement filaire. Évite le Wi-Fi pour la PS3.</td></tr>
             </tbody>
