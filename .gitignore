@@ -1,2 +1,121 @@
+# =========================================================
+#  Fichiers système Windows
+# =========================================================
 desktop.ini
+Desktop.ini
+DESKTOP.INI
 Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+
+# =========================================================
+#  Fichiers système macOS
+# =========================================================
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+.fseventsd
+.DocumentRevisions-V100
+.TemporaryItems
+
+# =========================================================
+#  Fichiers système Linux
+# =========================================================
+.directory
+.Trash-*
+
+# =========================================================
+#  Éditeurs / IDE
+# =========================================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-project
+*.sublime-workspace
+.project
+.classpath
+.settings/
+
+# =========================================================
+#  Logs et fichiers temporaires
+# =========================================================
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.tmp
+*.temp
+*.bak
+*.backup
+*~
+
+# =========================================================
+#  Archives
+# =========================================================
+*.zip
+*.rar
+*.7z
+*.tar
+*.tar.gz
+*.tar.bz2
+
+# =========================================================
+#  Dépendances (si applicable)
+# =========================================================
+node_modules/
+vendor/
+bower_components/
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+ENV/
+
+# =========================================================
+#  Build / Dist (si applicable)
+# =========================================================
+dist/
+build/
+out/
+*.min.js.map
+*.min.css.map
+.cache/
+.parcel-cache/
+
+# =========================================================
+#  Secrets et configuration locale
+# =========================================================
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+secrets.json
+
+# =========================================================
+#  Spécifique PS3 / Projets homebrew
+# =========================================================
+# Fichiers de travail PS3
+*.bak.ps3
+ps3_debug.log
+
+# Dossiers de travail locaux (ne pas commiter)
+/tmp/
+/test/
+
+# =========================================================
+#  Divers
+# =========================================================
+*.orig
+*.rej
+*.pid
+*.seed
+*.pid.lock
