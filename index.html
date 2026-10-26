@@ -141,7 +141,7 @@
             <p>Le CFW/HFW devient nécessaire pour :</p>
             <ul>
               <li>Les <strong>patchs EBOOT</strong> personnalisés</li>
-              <li>Les outils comme <strong>ezDNS</strong>, <strong>webMAN</strong>, etc.</li>
+              <li>Les outils comme <strong>ezDNS</strong>, <strong>webMAN</strong>, <strong>qDNSm</strong>, etc.</li>
               <li>Certains <strong>émulateurs de serveurs sur PC</strong> (EA Plasma/Arcadia, etc.)</li>
             </ul>
           </div>
@@ -349,6 +349,25 @@
           <div class="callout__icon">💡</div>
           <div class="callout__content">
             <p><strong>Astuce CFW</strong> : Avec le CFW, tu peux utiliser <strong>ezDNS</strong>, une application PS3 qui permet de <strong>sauvegarder et basculer rapidement entre plusieurs profils DNS</strong> pour différents jeux. Tu peux aussi utiliser des commandes webMAN comme <code>/netstatus.ps3?dns1=&lt;ip&gt;</code> pour changer le DNS rapidement.</p>
+          </div>
+        </div>
+
+        <div class="callout callout--tip">
+          <div class="callout__icon">🚀</div>
+          <div class="callout__content">
+            <p><strong>Nouveauté : qDNSm, le gestionnaire DNS rapide</strong></p>
+            <p>Pour les utilisateurs de <strong>CFW</strong> ou de <strong>PS3HEN (HFW)</strong>, un plugin récent nommé <strong>qDNSm</strong> simplifie considérablement le changement de DNS. Il permet de gérer une liste de serveurs et d'en appliquer un directement depuis le XMB, avec un redémarrage automatique de la connexion Internet. C'est une alternative moderne et plus automatisée à ezDNS.</p>
+            <p><strong>Fonctionnement :</strong></p>
+            <ul>
+              <li>Ouvre le menu depuis le XMB avec <code>R1 + R2 + R3</code>.</li>
+              <li>Sélectionne le serveur DNS souhaité dans la liste que tu as configurée.</li>
+              <li>Le plugin applique le changement et <strong>redémarre automatiquement la connexion réseau</strong> (environ 5 secondes).</li>
+              <li>Lance ensuite ton jeu.</li>
+            </ul>
+            <p><strong>Gestion :</strong> tu peux ajouter, modifier ou supprimer des entrées DNS et restaurer la configuration d'origine.</p>
+            <p><strong>Installation :</strong> le plugin est disponible sur le <a href="https://github.com/Tha14/qDNSm" target="_blank" rel="noopener">dépôt GitHub officiel</a> (un installateur <code>qDNSm-Installer.pkg</code> est fourni).</p>
+            <p><em>⚠️ Limitation : comme les jeux résolvent les DNS avant la connexion, il faut changer le DNS depuis le XMB, puis relancer le jeu pour que le changement soit pris en compte.</em></p>
+			<p><em>🦊 Clin d'œil au <strong>renard rusé</strong> (<strong>Kurnaz Tilki</strong>) qui a déniché qDNSm — merci pour le tuyau !</em></p>
           </div>
         </div>
 
@@ -823,10 +842,12 @@
           <li><a href="https://docs.google.com/spreadsheets/d/1Wn2EkQj_bZpgrT-xiDbqHkx91jcCHn34nXkl2Sv0GOs/edit#gid=0" target="_blank" rel="noopener"><strong>Liste des serveurs privés PS3</strong> : Google Sheets - Private Server List</a></li>
           <li><a href="https://psrewired.com/" target="_blank" rel="noopener"><strong>PS Rewired</strong> : psrewired.com</a></li>
           <li><a href="https://github.com/valters-tomsons/arcadia" target="_blank" rel="noopener"><strong>Arcadia (EA Plasma)</strong> : github.com/valters-tomsons/arcadia</a></li>
+          <li><a href="https://github.com/Tha14/qDNSm" target="_blank" rel="noopener"><strong>qDNSm (Plugin DNS rapide)</strong> : github.com/Tha14/qDNSm</a></li>
           <li><a href="https://backloggd.com/u/SolarisTM/list/online-server-ps3" target="_blank" rel="noopener"><strong>Liste Online Server PS3</strong> : Backloggd - SolarisTM</a></li>
         </ul>
 
         <p class="footer-note"><em>Guide créé pour la communauté PS3 OFW/CFW. Bon jeu ! By LvSs7...Et vous...</em></p>
+		<em>🦊 Remerciement spécial à <strong>Kurnaz Tilki</strong> pour sa contribution.</em></p>
       </div>
     </section>
 
